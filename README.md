@@ -1,5 +1,8 @@
 This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
 
+![image](https://github.com/MildTomato/vercel-accept-all/assets/8291514/eafc4493-a055-4ae0-898b-d555aa7ecb3d)
+
+
 ## Getting Started
 
 First, run the development server:
