@@ -29,8 +29,7 @@ yarn-error.log*
 .env*
 
 out/
-# can add this back in when deploying through app store
-# build/ 
+build/
 dist/
 
 # plasmo - https://www.plasmo.com
