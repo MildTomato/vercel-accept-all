@@ -7,7 +7,8 @@ const openVercelLinks = () => {
     "Vercel – studio-self-hosted",
     "Vercel – studio-staging",
     "Vercel – zone-www-dot-com",
-    "Vercel – database-new"
+    "Vercel – database-new",
+    "Vercel - design-system"
   ]
   const vercelItems = Array.from(
     document.body.querySelectorAll(".merge-status-list .merge-status-item")
