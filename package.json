@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Accepts all vercel deployments",
   "author": "jonathansummers-muir",
-  "packageManager": "pnpm@7.2.1",
+  "packageManager": "pnpm@7.33.7+sha256.d1581d46ed10f54ff0cbdd94a2373b1f070202b0fbff29f27c2ce01460427043",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@plasmohq/messaging": "^0.6.0",
+    "@plasmohq/storage": "^1.11.0",
     "plasmo": "0.77.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -30,7 +31,8 @@
       "https://*/*"
     ],
     "permissions": [
-      "scripting"
+      "scripting",
+      "tabs"
     ]
   }
 }

@@ -1,8 +1,21 @@
 import { sendToContentScript } from "@plasmohq/messaging"
+import { useStorage } from "@plasmohq/storage/hook"
 
 function IndexPopup() {
+  const [returnId, setReturnId] = useStorage("returnTabId")
+
   async function handleClick(command) {
+    const currentTab = await getCurrentTab()
+    if (currentTab) {
+      setReturnId(currentTab.id)
+    }
     await sendToContentScript({ name: command })
+  }
+
+  async function getCurrentTab() {
+    let queryOptions = { active: true, lastFocusedWindow: true }
+    let [tab] = await chrome.tabs.query(queryOptions)
+    return tab
   }
 
   async function approveAllVercelTabs() {
@@ -21,11 +34,15 @@ function IndexPopup() {
             authorizeButton.click()
             setTimeout(() => {
               window.close()
-            }, 2000)
+            })
           }
         })
       })
     })
+
+    if (returnId) {
+      chrome.tabs.update(returnId, { active: true })
+    }
   }
 
   return (

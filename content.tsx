@@ -15,8 +15,8 @@ const openVercelLinks = () => {
   ).filter((item) =>
     vercelNames.some((name) => item.textContent.includes(name))
   )
-  const hrefs = vercelItems.map(
-    (item) => item.querySelector("a.status-actions")?.getAttribute("href")
+  const hrefs = vercelItems.map((item) =>
+    item.querySelector("a.status-actions")?.getAttribute("href")
   )
 
   console.log("hrefs: ", hrefs)
@@ -34,7 +34,6 @@ const ContentScript = () => {
     const { name } = req
     if (name === "openTabs") {
       openVercelLinks()
-      // res.send({})
     }
   })
 }
