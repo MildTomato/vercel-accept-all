@@ -10,16 +10,16 @@ const openVercelLinks = () => {
     "Vercel – database-new",
     "Vercel - design-system"
   ]
-  const vercelItems = Array.from(
-    document.body.querySelectorAll(".merge-status-list .merge-status-item")
-  ).filter((item) =>
-    vercelNames.some((name) => item.textContent.includes(name))
-  )
-  const hrefs = vercelItems.map(
-    (item) => item.querySelector("a.status-actions")?.getAttribute("href")
+  const ariaLabelQueries = vercelNames.map((name) => `[aria-label^='${name}']`)
+  const vercelItems = ariaLabelQueries
+    .map((query) => document.body.querySelector(query))
+    .filter(Boolean)
+  const hrefs = vercelItems.map((item) =>
+    item
+      .querySelector("a[href^='https://vercel.com/git/authorize']")
+      ?.getAttribute("href")
   )
 
-  console.log("hrefs: ", hrefs)
   hrefs.forEach((href) => {
     if (href) {
       window.open(href, "_blank")
@@ -34,7 +34,6 @@ const ContentScript = () => {
     const { name } = req
     if (name === "openTabs") {
       openVercelLinks()
-      // res.send({})
     }
   })
 }

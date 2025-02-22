@@ -1,29 +1,33 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@plasmohq/messaging': ^0.6.0
   '@plasmohq/prettier-plugin-sort-imports': 4.0.1
+  '@plasmohq/storage': ^1.11.0
   '@types/chrome': 0.0.237
   '@types/node': 20.2.4
   '@types/react': 18.2.7
   '@types/react-dom': 18.2.4
   plasmo: 0.77.5
-  prettier: 2.8.8
+  prettier: ^3.0.0
   react: 18.2.0
   react-dom: 18.2.0
   typescript: 5.0.4
 
 dependencies:
+  '@plasmohq/messaging': 0.6.2_react@18.2.0
+  '@plasmohq/storage': 1.11.0_react@18.2.0
   plasmo: 0.77.5_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@plasmohq/prettier-plugin-sort-imports': 4.0.1_prettier@2.8.8
+  '@plasmohq/prettier-plugin-sort-imports': 4.0.1_prettier@3.3.2
   '@types/chrome': 0.0.237
   '@types/node': 20.2.4
   '@types/react': 18.2.7
   '@types/react-dom': 18.2.4
-  prettier: 2.8.8
+  prettier: 3.3.2
   typescript: 5.0.4
 
 packages:
@@ -1583,6 +1587,18 @@ packages:
     resolution: {integrity: sha512-Auxj4bSPHpJCrSjdyGP+iEiHAdDUAipB6vo51kwEt0vJp3JHiDZ2csoi8kvPZhCmLmPcnRackDTcMF8+KeT3eg==}
     dev: false
 
+  /@plasmohq/messaging/0.6.2_react@18.2.0:
+    resolution: {integrity: sha512-CGfcvfVE0wsN/Y/i/jV0nwjkwh2gBCEujZFhLoxJ12N0ScoP3JVEIvUxJSFsAD4ylBQ8IjD2FyjQozwiSxWc4Q==}
+    peerDependencies:
+      react: ^16.8.6 || ^17 || ^18
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      nanoid: 5.0.3
+      react: 18.2.0
+    dev: false
+
   /@plasmohq/parcel-bundler/0.5.5:
     resolution: {integrity: sha512-QCMmmfic514CfdXMJ7JMWUnqDzIHKVKyYeqPpUDsXON6JvA1yTmO5mEQSls8+5u/HpocP9QmTskQOHu3RCNX9A==}
     engines: {node: '>= 16.0.0', parcel: '>= 2.7.0'}
@@ -1924,7 +1940,7 @@ packages:
       - whiskers
     dev: false
 
-  /@plasmohq/prettier-plugin-sort-imports/4.0.1_prettier@2.8.8:
+  /@plasmohq/prettier-plugin-sort-imports/4.0.1_prettier@3.3.2:
     resolution: {integrity: sha512-pEIkcMZVqqqnFWoe3xiVGpXCq8rf+6EVGGSJqUMvD3zMAzHNu0pR1hdKjlhdwPYEzi3naResRJzfwmRU8hRzkA==}
     peerDependencies:
       prettier: 3.x
@@ -1937,10 +1953,22 @@ packages:
       javascript-natural-sort: 0.7.1
       lodash.clone: 4.5.0
       lodash.isequal: 4.5.0
-      prettier: 2.8.8
+      prettier: 3.3.2
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@plasmohq/storage/1.11.0_react@18.2.0:
+    resolution: {integrity: sha512-JLu8cCjn+yzbaIK2Gw+NDuDJgiTle3nj1HbMC/irnnUTc7lnJSiCEN/EsUcWcwNtv9BJM2r8DAk1stsQ8dCKug==}
+    peerDependencies:
+      react: ^16.8.6 || ^17 || ^18
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      pify: 6.1.0
+      react: 18.2.0
+    dev: false
 
   /@pnpm/config.env-replace/1.1.0:
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
@@ -4306,6 +4334,12 @@ packages:
     hasBin: true
     dev: false
 
+  /nanoid/5.0.3:
+    resolution: {integrity: sha512-I7X2b22cxA4LIHXPSqbBCEQSL+1wv8TuoefejsX4HFWyC6jc5JG7CEaxOltiKjc1M+YCS2YkrZZcj4+dytw9GA==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
+
   /napi-build-utils/1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: false
@@ -4538,6 +4572,11 @@ packages:
     dev: false
     optional: true
 
+  /pify/6.1.0:
+    resolution: {integrity: sha512-KocF8ve28eFjjuBKKGvzOBGzG8ew2OqOOSxTTZhirkzH7h3BI1vyzqlR0qbfcDBve1Yzo3FVlWUAtCRrbVN8Fw==}
+    engines: {node: '>=14.16'}
+    dev: false
+
   /pirates/4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
@@ -4715,9 +4754,9 @@ packages:
       tunnel-agent: 0.6.0
     dev: false
 
-  /prettier/2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier/3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
